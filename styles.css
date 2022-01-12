@@ -19,14 +19,32 @@
     --h1-l:42px;
     --h1-xl:56px;
     --h1-2xl:64px;
-    --h2-s:30px;
+    --h2-s:22px;
     --h2-m:34px;
     --h2-l:38px;
     --h2-xl:42px;
     --h2-2xl:46px;
 }
 html{
-    font-family:"Poppins", sans-serif
+    font-family:"Poppins", sans-serif;
+    background:var(--main-grey)
+}
+h1{
+    color:white;
+    font-size:var(--h1-s);
+    text-align: center;
+}
+h2{
+    font-size:var(--h2-s);
+    text-align:center;
+    color:white;
+}
+h3{
+    color:var(--text-gray);
+    text-align:center;
+}
+p{
+    color:var(--text-gray)
 }
 .top-nav{
     display:flex;
@@ -37,6 +55,47 @@ html{
     background:var(--nav-grey);
     position:relative;
 }
+.main-container{
+    padding:1em;
+}
+.branding{
+    margin-left:1em;
+    font-size:var(--h2-s);
+    font-weight:900;
+    color:white;
+}
+.subscription-options{
+    width:100%;
+    display:grid;
+    text-align: center;
+    align-items: center;
+    grid-template-columns: 1fr 0.5fr 1fr;
+}
+.switch{
+    position:relative;
+    background:black;
+    align-items: center;
+    width:100%;
+    height:70%;
+    border-radius: 25px;
+}
+.switch:after{
+    content:"";
+    position:absolute;
+    display:flex;
+    bottom:-3.5px;
+    width:23.5px;
+    height:23.5px;
+    border-radius:50%;
+    border: 3px solid var(--main-green);
+    background-color: black;
+    box-shadow:0px 0px 3px var(--main-green)
+    
+    
+}
+.hamburger{
+    margin-right:1em;
+}
 .nav-list{
     position:absolute;
     width:100%;
@@ -45,8 +104,14 @@ html{
     justify-content: space-around;
     align-items: center;
     top:8vh;
+    left:-100%;
     height:92vh;
-    background:blue;
+    background:var(--nav-grey);
+    color:white;
+    transition:all 0.3s ease;
+}
+.nav-list.is-active{
+    left:0;
 }
 .nav-list li{
     height:100%;
@@ -59,6 +124,11 @@ html{
 .start-btn{
     height:100%;
     width:100%;
+    border:none;
+    outline:none;
+    background:var(--main-green);
+    color:white;
+    font-size:var(--p-s)
 }
 ul{
     list-style: none;
@@ -68,8 +138,8 @@ ul{
     flex-direction: column;
     justify-content: right;
     align-items: flex-end;
-    margin-left:1em;
 }
+
 #line{
     width:25px;
     height:4px;
@@ -77,4 +147,50 @@ ul{
     background:var(--main-green);
     margin-bottom: 5px;
     transition: all 0.3s ease;
+}
+
+.hamburger.active #line:nth-child(1){
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active #line:nth-child(2){
+    opacity:0;
+}
+.hamburger.active #line:nth-child(3){
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.card > * {
+    margin-bottom:10px;
+}
+
+.benefits li{
+    display:grid;
+    grid-template-columns: 1fr 9fr;
+}
+h6{
+   font-size:var(--p-s); 
+   color:var(--text-gray);
+}
+h5{
+    font-size:var(--h1-s);
+    color:var(--main-green);
+}
+.sub-cards > *{
+    margin-top:1em;
+}
+.card{
+    border:1px solid var(--text-gray);
+    padding:1em;
+    background:var(--dark-grey);
+}
+
+.current-plan{
+    width:100%;
+    padding:1em;
+    font-size:var(--p-s);
+    background:var(--main-green);
+    color:white;
+}
+.current-plan p{
+    color:white;
 }
