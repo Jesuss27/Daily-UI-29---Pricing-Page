@@ -15,8 +15,8 @@
     --p-mobile-l:24px;
     --p-tablet:26px;
     --p-desktop-s:16px;
-    --p-desktop-m:30px;
-    --p-desktop-l:32px;
+    --p-desktop-m:20px;
+    --p-desktop-l:26px;
     /* h1 */
     --h1-mobile-s:28px;
     --h1-mobile-m:30px;
@@ -31,16 +31,16 @@
     --h2-mobile-l:32px;
     --h2-tablet:34px;
     --h2-desktop-s:18px;
-    --h2-desktop-m:38px;
-    --h2-desktop-l:40px;
+    --h2-desktop-m:24px;
+    --h2-desktop-l:26px;
     /* h3 */
     --h3-mobile-s:22px;
     --h3-mobile-m:24px;
     --h3-mobile-l:26px;
     --h3-tablet:28px;
     --h3-desktop-s:22px;
-    --h3-desktop-m:38px;
-    --h3-desktop-l:40px;
+    --h3-desktop-m:24px;
+    --h3-desktop-l:26px;
     /* h5 */
     --h5-mobile-s:36px;
     --h5-mobile-m:38px;
@@ -64,8 +64,15 @@
 html{
     font-family:"Poppins", sans-serif;
     background:var(--main-grey);
-    min-width:300px;
 }
+.container{
+    margin:auto;
+    min-width:300px;
+    max-width:2000px;
+    max-height:1100px;
+    min-height:500px;
+}
+
 
 
 /* varialbe elements */
@@ -322,6 +329,7 @@ ul{
 
 /* tablet */
 @media screen and (min-width:769px){
+    /* subscription card container */
     .price p{
         font-size: 24px;
         color:var(--main-green);
@@ -364,6 +372,7 @@ ul{
         box-shadow:0px 0px 20px var(--main-green);
 
     }
+    /* variable elements */
     h1{
         font-size:var(--h1-desktop-s)
     }
@@ -376,6 +385,7 @@ ul{
     p{
         font-size:var(--p-desktop-s)
     }
+    /* switch div */
     .subscription-options{
         width:40%;
         display:flex;
@@ -401,6 +411,7 @@ ul{
         border-radius:50%;
         border:3px solid var(--main-green);
     }
+    /* top nav modifications */
     .hamburger{
         display:none;
     }
@@ -411,9 +422,49 @@ ul{
         margin-right:1em;
 
     }
+    .nav-list li{
+        width:auto;
+        height:auto;
+        cursor:pointer;
+    }
+    .nav-list li button{
+        padding:1em 2.5em;
+        cursor:pointer;
+    }
     .top-nav{
         display:grid;
         grid-template-columns: 1fr 5fr;
+    }
+
+}
+
+@media screen and (min-width:1025px){
+    h1{
+        font-size:var(--h1-desktop-m)
+    }
+    h2{
+        font-size:var(--h2-desktop-m);
+    }
+    h3{
+        font-size:var(--h3-desktop-m);
+    }
+    p{
+        font-size:var(--p-desktop-m)
+    }
+
+}
+@media screen and (min-width:1600px){
+    h1{
+        font-size:var(--h1-desktop-l)
+    }
+    h2{
+        font-size:var(--h2-desktop-l);
+    }
+    h3{
+        font-size:var(--h3-desktop-l);
+    }
+    p{
+        font-size:var(--p-desktop-l);
     }
 
 }
